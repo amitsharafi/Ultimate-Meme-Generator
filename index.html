@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ultimate Meme Generator</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <section class="gallery">
+      <header class="gallery-header flex space-between align-center">
+        <div class="header-logo">
+          <img src="ICONS/LOGO.png" />
+        </div>
+        <ul class="nav clean-list flex">
+          <li>
+            <a href="#">Gallery</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </header>
+      <div class="gallery-search flex align-center justify-center">
+        <input type="text" placeholder="Enter search keyward" />
+        <button>
+          <img src="ICONS/search-icon.png" />
+        </button>
+      </div>
+      <main class="gallery main-content">
+        <div class="images"></div>
+        <div class="actor"></div>
+      </main>
+      <footer class="gallery-footer flex column align-center">
+        <div class="footer-logo">
+          <img src="ICONS/LOGO.png" />
+        </div>
+        <div class="rights">all rights reserved</div>
+      </footer>
+    </section>
+    <section class="editor hidden">
+      <header class="editor-header flex space-between align-center">
+        <div class="header-logo">
+          <img src="ICONS/LOGO.png" />
+        </div>
+        <ul class="nav clean-list flex">
+          <li>
+            <a onclick="returnToGallery()" href="#">Gallery</a>
+          </li>
+          <li>
+            <a href="#">About</a>
+          </li>
+        </ul>
+      </header>
+      <main class="editor-main-content flex">
+        <canvas
+          onmousedown="onDown(event)"
+          onmousemove="onMove(event)"
+          onmouseup="onUp()"
+          class="editor-canvas"
+          height="500"
+          width="500"
+        ></canvas>
+
+        <div class="editor-options flex column justify-center">
+          <div>
+            <input
+              oninput="onChangeTxt(this.value)"
+              class="txt-input"
+              type="text"
+              placeholder="Enter text here"
+            />
+          </div>
+          <div class="switch-add-delete">
+            <button onclick="onMoveTxt(-5)">
+              <img src="ICONS/arrow-up.png" />
+            </button>
+            <button onclick="onMoveTxt(5)">
+              <img src="ICONS/arrow-down.png" />
+            </button>
+            <button onclick="onSwitchLine()">
+              <img src="ICONS/switch-line.png" />
+            </button>
+            <button onclick="onAddLine()">
+              <img src="ICONS/add.png" />
+            </button>
+            <button onclick="onDeleteLine()">
+              <img src="ICONS/trash.png" />
+            </button>
+          </div>
+          <div class="txt-options">
+            <button onclick="onChangeFontSize(5)">
+              <img src="ICONS/increase font - icon.png" />
+            </button>
+            <button onclick="onChangeFontSize(-5)">
+              <img src="ICONS/decrease font - icon.png" />
+            </button>
+            <button onclick="onAlignLeft()">
+              <img src="ICONS/align-to-left.png" />
+            </button>
+            <button onclick="onAlignCenter()">
+              <img src="ICONS/center-text-alignment.png" />
+            </button>
+            <button onclick="onAlignRight()">
+              <img src="ICONS/align-to-right.png" />
+            </button>
+            <div class="family-color">
+              <select onchange="onSetFont(this.value)">
+                <option value="Impact">Impact</option>
+                <option value="Arial">Arial</option>
+              </select>
+              <input
+                onchange="onSetStrokeColor(this.value)"
+                class="stroke-color"
+                type="color"
+              />
+              <input onchange="onSetFillColor(this.value)" type="color" />
+            </div>
+          </div>
+        </div>
+      </main>
+      <footer class="editor-footer flex column">
+        <div class="footer-logo">
+          <img src="ICONS/LOGO.png" />
+        </div>
+        <div class="rights">all rights reserved</div>
+      </footer>
+    </section>
+    <script src="js/meme-controller.js"></script>
+    <script src="js/meme-service.js"></script>
+    <script src="js/gallery-controller.js"></script>
+  </body>
+</html>
