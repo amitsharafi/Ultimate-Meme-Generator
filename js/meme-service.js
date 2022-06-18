@@ -28,7 +28,7 @@ var gMeme = {
   selectedLineIdx: 0,
   lines: [
     {
-      txt: 'Enter text here',
+      txt: 'text here',
       size: 40,
       color: { fill: 'white', stroke: 'black' },
       font: 'Impact',
@@ -36,7 +36,7 @@ var gMeme = {
       isDrag: false,
     },
     {
-      txt: 'Enter text here',
+      txt: 'Hello',
       size: 40,
       color: { fill: 'white', stroke: 'black' },
       font: 'Impact',
@@ -124,6 +124,7 @@ function moveTxt(px) {
 
 function alignLeft() {
   gMeme.lines[gMeme.selectedLineIdx].pos.x = 10
+  console.log(gCtx.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width)
 }
 
 function alignRight(x) {

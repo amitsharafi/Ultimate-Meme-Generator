@@ -32,8 +32,8 @@ button {
   transition: 0.2s;
   border: none;
   border-radius: 6px;
-  height: 40px;
-  width: 40px;
+  height: 4em;
+  width: 4em;
 }
 
 select {
