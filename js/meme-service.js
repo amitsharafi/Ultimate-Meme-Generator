@@ -3,7 +3,7 @@
 var gKeywordSearchCountMap = { funny: 12, cat: 16, baby: 2 }
 
 var gImgs = [
-  { id: 0, url: 'img/1.jpg', keywords: ['donald', 'trump', 'president'] },
+  { id: 0, url: 'img/1.jpg', keywords: ['trump', 'president'] },
   { id: 1, url: 'img/2.jpg', keywords: ['dogs'] },
   { id: 2, url: 'img/3.jpg', keywords: ['baby', 'dogs', 'sleep'] },
   { id: 3, url: 'img/4.jpg', keywords: ['cat, sleep'] },
@@ -19,7 +19,7 @@ var gImgs = [
   { id: 13, url: 'img/14.jpg', keywords: [] },
   { id: 14, url: 'img/15.jpg', keywords: [] },
   { id: 15, url: 'img/16.jpg', keywords: [] },
-  { id: 16, url: 'img/17.jpg', keywords: ['putin'] },
+  { id: 16, url: 'img/17.jpg', keywords: ['putin', 'president'] },
   { id: 17, url: 'img/18.jpg', keywords: [] },
 ]
 
@@ -52,10 +52,6 @@ function getImgs() {
 
 function getMeme() {
   return gMeme
-}
-
-function getCurrLineIdx() {
-  return gMeme.selectedLineIdx
 }
 
 function setImg(imgId) {
@@ -93,7 +89,7 @@ function setFont(font) {
   gMeme.lines[gMeme.selectedLineIdx].font = font
 }
 function addLine() {
-  var line = {
+  const line = {
     txt: 'Enter text here',
     size: 40,
     color: { fill: 'white', stroke: 'black' },

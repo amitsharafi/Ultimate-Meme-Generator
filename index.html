@@ -7,7 +7,7 @@
     <title>Ultimate Meme Generator</title>
     <link rel="stylesheet" href="css/main.css" />
   </head>
-  <body>
+  <body onload="init()">
     <section class="gallery">
       <header class="gallery-header flex space-between align-center">
         <div class="header-logo">
@@ -23,10 +23,16 @@
         </ul>
       </header>
       <div class="gallery-search flex align-center justify-center">
-        <input type="text" placeholder="Enter search keyward" />
-        <button>
-          <img src="ICONS/search-icon.png" />
-        </button>
+        <div class="search-box">
+          <input
+            oninput="onFilterByKey(this.value)"
+            type="text"
+            placeholder="Enter search keyward"
+          />
+          <button>
+            <img src="ICONS/search-icon.png" />
+          </button>
+        </div>
       </div>
       <main class="gallery main-content">
         <div class="images"></div>
@@ -46,7 +52,7 @@
         </div>
         <ul class="nav clean-list flex">
           <li>
-            <a onclick="returnToGallery()" href="#">Gallery</a>
+            <a onclick="moveToGallery()" href="#">Gallery</a>
           </li>
           <li>
             <a href="#">About</a>
@@ -54,14 +60,16 @@
         </ul>
       </header>
       <main class="editor-main-content flex">
-        <canvas
-          onmousedown="onDown(event)"
-          onmousemove="onMove(event)"
-          onmouseup="onUp()"
-          class="editor-canvas"
-          height="500"
-          width="500"
-        ></canvas>
+        <div class="canvas-container">
+          <canvas
+            onmousedown="onDown(event)"
+            onmousemove="onMove(event)"
+            onmouseup="onUp()"
+            class="editor-canvas"
+            height="400"
+            width="400"
+          ></canvas>
+        </div>
 
         <div class="editor-options flex column justify-center">
           <div>
@@ -111,7 +119,7 @@
             </select>
             <button class="color">
               <input
-                onchange="onSetStrokeColor(this.value)"
+                oninput="onSetStrokeColor(this.value)"
                 class="color"
                 type="color"
               />
@@ -119,7 +127,7 @@
             </button>
             <button class="color">
               <input
-                onchange="onSetFillColor(this.value)"
+                oninput="onSetFillColor(this.value)"
                 class="color"
                 type="color"
               />
