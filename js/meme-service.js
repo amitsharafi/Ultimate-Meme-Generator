@@ -40,7 +40,7 @@ var gMeme = {
       size: 40,
       color: { fill: 'white', stroke: 'black' },
       font: 'Impact',
-      pos: { x: 130, y: 450 },
+      pos: { x: 160, y: 350 },
       isDrag: false,
     },
   ],

@@ -1,9 +1,6 @@
 'use strict'
 
-function renderGallery(imgs) {
-  if (!imgs) {
-    imgs = getImgs()
-  }
+function renderGallery(imgs = getImgs()) {
   const elGallery = document.querySelector('.gallery .images')
   let strHTML = ''
   imgs.forEach((img) => {
