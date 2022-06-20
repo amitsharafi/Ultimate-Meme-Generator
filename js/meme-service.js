@@ -25,7 +25,7 @@ var gImgs = [
 
 var gMeme = {
   selectedImgId: 5,
-  selectedLineIdx: 0,
+  selectedLineIdx: null,
   lines: [
     {
       txt: 'text here',
@@ -94,7 +94,7 @@ function addLine() {
     size: 40,
     color: { fill: 'white', stroke: 'black' },
     font: 'Impact',
-    pos: { x: 130, y: gCanvas.height / 2 },
+    pos: { x: 100, y: gCanvas.height / 2 },
     isDrag: false,
   }
   gMeme.lines.push(line)

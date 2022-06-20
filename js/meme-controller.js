@@ -135,6 +135,7 @@ function onDeleteLine() {
 
 function onAddLine() {
   addLine()
+  setInputValue()
   renderMeme()
 }
 
